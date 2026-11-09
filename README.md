@@ -15,7 +15,7 @@ curl -fsSL https://raw.githubusercontent.com/Marcus1571/jetbrains-mono-nerd-font
 The script tries three sources, most desirable first, and stops at the first that works:
 
 1. **Official Nerd Fonts release** (always the latest version).
-2. **This repo's release** `v3.5.1`: the same zip, byte for byte, checked against its SHA-256.
+2. **This repo's latest release**: the same zip, byte for byte, checked against its SHA-256.
 3. **This repo's split parts** in [`backup/`](backup): the same zip cut into three pieces
    under GitHub's 100 MB file limit, joined back and checked. These come from a
    different GitHub server than releases, so they still work when release downloads don't.
@@ -28,7 +28,7 @@ then restart the apps that should use the font.
 Get the zip from the first source that works, then install the fonts from it.
 
 1. Official: <https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip>
-2. Mirror: <https://github.com/Marcus1571/jetbrains-mono-nerd-font/releases/download/v3.5.1/JetBrainsMono.zip>
+2. Mirror: <https://github.com/Marcus1571/jetbrains-mono-nerd-font/releases/latest/download/JetBrainsMono.zip>
 3. Split parts: download the three files in [`backup/`](backup) (or the whole repo with
    **Code → Download ZIP**) and join them:
    - macOS / Linux: `cat JetBrainsMono.zip.part-aa JetBrainsMono.zip.part-ab JetBrainsMono.zip.part-ac > JetBrainsMono.zip`

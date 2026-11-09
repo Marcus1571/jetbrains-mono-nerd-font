@@ -6,7 +6,7 @@ VERSION=v3.5.1
 SHA256=fab782a66f7d3019da64f6572db9fc5d3a4bcb19f9fa13e2d8a62e3693d6396e
 REPO=Marcus1571/jetbrains-mono-nerd-font
 OFFICIAL=https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-MIRROR=https://github.com/$REPO/releases/download/$VERSION/JetBrainsMono.zip
+MIRROR=https://github.com/$REPO/releases/latest/download/JetBrainsMono.zip
 PARTS=https://raw.githubusercontent.com/$REPO/main/backup/JetBrainsMono.zip.part-
 
 case $(uname -s) in
@@ -24,7 +24,7 @@ pinned() { readable && [ "$(sha "$ZIP")" = "$SHA256" ]; }
 if curl -fsSL "$OFFICIAL" -o "$ZIP" && readable; then
   src="official Nerd Fonts release (latest)"
 elif curl -fsSL "$MIRROR" -o "$ZIP" && pinned; then
-  src="mirror release $VERSION"
+  src="mirror release (Nerd Fonts $VERSION)"
 else
   : > "$ZIP"
   for p in aa ab ac; do curl -fsSL "$PARTS$p" >> "$ZIP" || break; done

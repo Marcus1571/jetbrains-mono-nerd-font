@@ -16,6 +16,7 @@ which tries the official release, then this repo's release, then the split parts
 
 - The zip is never modified: the release asset and the joined parts must be
   byte-identical to the official file, and `backup/SHA256SUMS` proves it.
+- Every GitHub release carries `JetBrainsMono.zip` as an asset: `install.sh` downloads `releases/latest/download/JetBrainsMono.zip`, so a release without it breaks the mirror source.
 - Parts stay under GitHub's 100 MB per-file limit (`split -b 45m`).
 - `install.sh` stays POSIX `sh` and runs on stock macOS and Linux (no Homebrew, no git).
 
